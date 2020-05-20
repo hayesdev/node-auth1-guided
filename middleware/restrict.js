@@ -49,7 +49,7 @@ function restrict() {
       // const { cookie } = req.headers;
       // // YOU FORGOT THE "S" IN HEADERS AND IT TOOK YOU AN HOUR TO FIGURE OUT
       // // WHY THE COOKIE WAS NOT BEING STORED TO THE GET USERS ROUTE
-      // // B/C THERE WAS NO FEEDACK OR ERRORS!!!!!!!!!!!!!!!!!!
+      // // B/C THERE WAS NO FEEDACK OR ERRORS!!!!!!!!!!!!!!!!
       // if (!cookie) {
       //   return res.status(401).json(authError);
       // }
