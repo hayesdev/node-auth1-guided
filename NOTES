@@ -1,0 +1,30 @@
+Authentication (AuthN)= Who are you?
+Authorization (AuthZ)= What do you want?
+
+Authentication Core Principles:
+-Requiring strong passwords
+-Properly storing passwords
+    *Never store passwords as plain text!!
+-Preventing brute-force attacks
+
+[Rainbow Table]
+md5_hash                                associated_password
+---------------------------------------------------------------
+8743b52063cd84097a65d1633f5c74f5        hello world
+01dfae6e5d4d90d9892622325959afbe        w3bpt10
+f0fda58630310a6dd91a7d8f0a4ceda2        lambda_sch00l
+
+
+
+
+Sessions & Cookies Overall Flow
+----------------------------------------------------------------
+- Client sends credentials to server (login)
+- Server verifies the credentials (checks bcrypt hash)
+- Server create a session for the client
+- Session is a random number stored as boject so its remembered
+- Server sends session data back to client as a set-cookie header
+- Client stores the cookie in its cookie jar
+- Client sends cookie on every subsequent request
+- Server verifies the cookie is valid
+- Server provides access to the resource (authorized!)

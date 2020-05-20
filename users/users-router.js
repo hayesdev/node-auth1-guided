@@ -1,14 +1,15 @@
-const express = require("express")
-const Users = require("./users-model")
+const express = require("express");
+const Users = require("./users-model");
+const { restrict } = require("../middleware/restrict");
 
-const router = express.Router()
+const router = express.Router();
 
-router.get("/", async (req, res, next) => {
-	try {
-		res.json(await Users.find())
-	} catch(err) {
-		next(err)
-	}
-})
+router.get("/", restrict(), async (req, res, next) => {
+  try {
+    res.json(await Users.find());
+  } catch (err) {
+    next(err);
+  }
+});
 
-module.exports = router
+module.exports = router;
